@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mandarin Flashcards</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="app-header">
+      <h1 class="app-name">Mandarin Flashcards</h1>
+
+      <div class="category-picker">
+        <label for="categorySelect">Study category</label>
+
+        <select id="categorySelect">
+          <option value="all">All Words</option>
+          <option value="colors">Colors</option>
+          <option value="western">Western Food</option>
+          <option value="ingredients">Meats &amp; Ingredients</option>
+          <option value="chinese">Chinese Dishes</option>
+          <option value="fruits">Fruits</option>
+          <option value="phrases">Common Phrases</option>
+            <option value="verbs">Verbs</option>
+            <option value="timeLocation">Time &amp; Locations</option>
+        </select>
+      </div>
+    </header>
+
+    <section
+      class="card"
+      id="flashcard"
+      role="button"
+      tabindex="0"
+      aria-label="Tap to reveal English translation"
+    >
+      <div class="chinese" id="chinese">你好</div>
+      <div class="pinyin" id="pinyin">nǐ hǎo</div>
+      <div class="english" id="english"></div>
+    </section>
+
+    <p class="hint" id="hint">
+      Tap the card to reveal the English translation.
+    </p>
+
+    <div class="controls">
+      <button class="next-button" id="nextButton" type="button">
+        Next Word
+      </button>
+    </div>
+
+    <div class="progress" id="progress"></div>
+
+  </main>
+</body>
+</html>
