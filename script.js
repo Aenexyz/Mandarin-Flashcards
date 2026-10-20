@@ -54,7 +54,6 @@ const words = [
   { chinese: "春卷", pinyin: "chūn juǎn", english: "Spring rolls", category: "chinese" },
   { chinese: "北京烤鸭", pinyin: "běi jīng kǎo yā", english: "Peking duck", category: "chinese" },
   { chinese: "宫保鸡丁", pinyin: "gōng bǎo jī dīng", english: "Kung Pao chicken", category: "chinese" },
-  { chinese: "麻婆豆腐", pinyin: "má pó dòu fu", english: "Mapo tofu", category: "chinese" },
   { chinese: "火锅", pinyin: "huǒ guō", english: "Hot pot", category: "chinese" },
   { chinese: "烤鸭", pinyin: "kǎo yā", english: "Roast duck", category: "chinese" },
   { chinese: "馄饨", pinyin: "hún tun", english: "Wontons", category: "chinese" },
@@ -62,16 +61,10 @@ const words = [
   { chinese: "炒蔬菜", pinyin: "chǎo shū cài", english: "Stir-fried vegetables", category: "chinese" },
   { chinese: "糖醋排骨", pinyin: "táng cù pái gǔ", english: "Sweet and sour ribs", category: "chinese" },
   { chinese: "红烧肉", pinyin: "hóng shāo ròu", english: "Braised pork", category: "chinese" },
-  { chinese: "兰州拉面", pinyin: "lán zhōu lā miàn", english: "Lanzhou beef noodles", category: "chinese" },
-  { chinese: "煎饺", pinyin: "jiān jiǎo", english: "Pan-fried dumplings", category: "chinese" },
   { chinese: "烧卖", pinyin: "shāo mài", english: "Shumai", category: "chinese" },
-  { chinese: "肠粉", pinyin: "cháng fěn", english: "Rice noodle rolls", category: "chinese" },
-  { chinese: "叉烧", pinyin: "chā shāo", english: "Char siu pork", category: "chinese" },
   { chinese: "蛋炒饭", pinyin: "dàn chǎo fàn", english: "Egg fried rice", category: "chinese" },
   { chinese: "酸辣汤", pinyin: "suān là tāng", english: "Hot and sour soup", category: "chinese" },
-  { chinese: "馒头", pinyin: "mán tou", english: "Steamed bun", category: "chinese" },
   { chinese: "烤串", pinyin: "kǎo chuàn", english: "Grilled skewers", category: "chinese" },
-  { chinese: "煎蛋饼", pinyin: "jiān dàn bǐng", english: "Chinese egg pancake", category: "chinese" },
 
   // Fruits
   { chinese: "苹果", pinyin: "píng guǒ", english: "Apple", category: "fruits" },
@@ -82,21 +75,12 @@ const words = [
   { chinese: "芒果", pinyin: "máng guǒ", english: "Mango", category: "fruits" },
   { chinese: "菠萝", pinyin: "bō luó", english: "Pineapple", category: "fruits" },
   { chinese: "草莓", pinyin: "cǎo méi", english: "Strawberry", category: "fruits" },
-  { chinese: "桃子", pinyin: "táo zi", english: "Peach", category: "fruits" },
-  { chinese: "梨", pinyin: "lí", english: "Pear", category: "fruits" },
   { chinese: "樱桃", pinyin: "yīng táo", english: "Cherry", category: "fruits" },
   { chinese: "柠檬", pinyin: "níng méng", english: "Lemon", category: "fruits" },
   { chinese: "椰子", pinyin: "yē zi", english: "Coconut", category: "fruits" },
   { chinese: "木瓜", pinyin: "mù guā", english: "Papaya", category: "fruits" },
-  { chinese: "猕猴桃", pinyin: "mí hóu táo", english: "Kiwi", category: "fruits" },
   { chinese: "石榴", pinyin: "shí liu", english: "Pomegranate", category: "fruits" },
   { chinese: "蓝莓", pinyin: "lán méi", english: "Blueberry", category: "fruits" },
-  { chinese: "哈密瓜", pinyin: "hā mì guā", english: "Hami melon", category: "fruits" },
-  { chinese: "柚子", pinyin: "yòu zi", english: "Pomelo", category: "fruits" },
-  { chinese: "荔枝", pinyin: "lì zhī", english: "Lychee", category: "fruits" },
-  { chinese: "龙眼", pinyin: "lóng yǎn", english: "Longan", category: "fruits" },
-  { chinese: "火龙果", pinyin: "huǒ lóng guǒ", english: "Dragon fruit", category: "fruits" },
-  { chinese: "山竹", pinyin: "shān zhú", english: "Mangosteen", category: "fruits" },
   { chinese: "榴莲", pinyin: "liú lián", english: "Durian", category: "fruits" },
 
   // Colors
@@ -121,10 +105,11 @@ const words = [
   // Common Phrases
   { chinese: "请问，这个多少钱？", pinyin: "qǐng wèn, zhè ge duō shao qián?", english: "Excuse me, how much is this?", category: "phrases" },
   { chinese: "你好，早上好。", pinyin: "nǐ hǎo, zǎo shang hǎo", english: "Hello, good morning.", category: "phrases" },
+  { chinese: "这个怎么用？", pinyin: "zhè ge zěn me yòng?", english: "How do I use this?", category: "phrases" },
+  { chinese: "请问，这附近有餐厅吗？", pinyin: "qǐng wèn, zhè fù jìn yǒu cān tīng ma?", english: "Excuse me, are there any restaurants nearby?", category: "phrases" },
   { chinese: "你好，下午好。", pinyin: "nǐ hǎo, xià wǔ hǎo", english: "Hello, good afternoon.", category: "phrases" },
   { chinese: "你好，晚上好。", pinyin: "nǐ hǎo, wǎn shang hǎo", english: "Hello, good evening.", category: "phrases" },
   { chinese: "对不起，我不明白。", pinyin: "duì bu qǐ, Wǒ tīng bù dǒng", english: "Sorry, I don't understand.", category: "phrases" },
-  { chinese: "请再说一遍，好吗？", pinyin: "qǐng zài shuō yí biàn, hǎo ma?", english: "Could you say that again, please?", category: "phrases" },
   { chinese: "你会说英语吗？", pinyin: "nǐ huì shuō Yīng yǔ ma?", english: "Can you speak English?", category: "phrases" },
   { chinese: "请问，洗手间在哪里？", pinyin: "qǐng wèn, cè suǒ zài nǎ lǐ?", english: "Excuse me, where is the bathroom?", category: "phrases" },
   { chinese: "没关系。", pinyin: "méi guān xi", english: "It's okay / No problem.", category: "phrases" },
@@ -136,9 +121,15 @@ const words = [
   { chinese: "这里很热", pinyin: "zhè lǐ hěn rè", english: "It's very hot here", category: "phrases" },
   { chinese: "请稍后", pinyin: "qǐng shāo hòu", english: "Please hold on / Please wait a moment", category: "phrases" },
   { chinese: "请帮帮我", pinyin: "qǐng bāng bang wǒ", english: "Please help me", category: "phrases" },
+  { chinese: "你可以说慢一点吗？", pinyin: "nǐ kě yǐ shuō màn yì diǎn ma?", english: "Could you speak a little more slowly?", category: "phrases" },
+  { chinese: "这里有人坐吗？", pinyin: "zhè lǐ yǒu rén zuò ma?", english: "Is anyone sitting here?", category: "phrases" },
+  { chinese: "请问，几点关门？", pinyin: "qǐng wèn, jǐ diǎn guān mén?", english: "Excuse me, what time do you close?", category: "phrases" },
+  { chinese: "我可以用手机支付吗？", pinyin: "wǒ kě yǐ yòng shǒu jī zhī fù ma?", english: "Can I pay with my phone?", category: "phrases" },
+  { chinese: "我在哪里可以买票？", pinyin: "wǒ zài nǎ lǐ kě yǐ mǎi piào?", english: "Where can I buy tickets?", category: "phrases" },
 
   // Common Verbs
   { chinese: "给", pinyin: "gěi", english: "Give", category: "verbs" },
+  { chinese: "带来", pinyin: "dài", english: "Bring", category: "verbs" },
   { chinese: "看", pinyin: "kàn", english: "See / Look / Watch", category: "verbs" },
   { chinese: "要", pinyin: "yào", english: "Want / Need", category: "verbs" },
   { chinese: "说", pinyin: "shuō", english: "Speak / Say", category: "verbs" },
@@ -210,7 +201,6 @@ const words = [
   { chinese: "这", pinyin: "zhè", english: "This", category: "phrases" },
   { chinese: "那", pinyin: "nà", english: "That", category: "phrases" },
   { chinese: "这里", pinyin: "zhè lǐ", english: "Here", category: "phrases" },
-  { chinese: "那里", pinyin: "nà lǐ", english: "There", category: "phrases" },
   { chinese: "什么", pinyin: "shén me", english: "What", category: "phrases" },
   { chinese: "谁", pinyin: "shéi", english: "Who", category: "phrases" },
   { chinese: "哪里", pinyin: "nǎ lǐ", english: "Where", category: "phrases" },
@@ -218,6 +208,7 @@ const words = [
   { chinese: "为什么", pinyin: "wèi shén me", english: "Why", category: "phrases" },
   { chinese: "怎么", pinyin: "zěn me", english: "How", category: "phrases" },
   { chinese: "现在", pinyin: "xiàn zài", english: "Now / Right now", category: "phrases" }
+  { chinese: "票", pinyin: "piào", english: "Ticket", category: "nouns" },
 ];
 
 // ==========================================
