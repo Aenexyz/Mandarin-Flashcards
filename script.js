@@ -1,3 +1,8 @@
+// ==========================================
+// MANDARIN FLASHCARDS
+// Includes Known Words, Return to Deck,
+// Randomized Study, and Local Storage
+// ==========================================
 
 const words = [
   // Western Food
@@ -93,13 +98,11 @@ const words = [
   { chinese: "火龙果", pinyin: "huǒ lóng guǒ", english: "Dragon fruit", category: "fruits" },
   { chinese: "山竹", pinyin: "shān zhú", english: "Mangosteen", category: "fruits" },
   { chinese: "榴莲", pinyin: "liú lián", english: "Durian", category: "fruits" },
-  
-  // PRIMARY COLORS
+
+  // Colors
   { chinese: "红色", pinyin: "hóng sè", english: "Red", category: "colors" },
   { chinese: "黄色", pinyin: "huáng sè", english: "Yellow", category: "colors" },
   { chinese: "蓝色", pinyin: "lán sè", english: "Blue", category: "colors" },
-
-  // COMMON COLORS
   { chinese: "绿色", pinyin: "lǜ sè", english: "Green", category: "colors" },
   { chinese: "橙色", pinyin: "chéng sè", english: "Orange", category: "colors" },
   { chinese: "紫色", pinyin: "zǐ sè", english: "Purple", category: "colors" },
@@ -115,7 +118,7 @@ const words = [
   { chinese: "金色", pinyin: "jīn sè", english: "Gold", category: "colors" },
   { chinese: "银色", pinyin: "yín sè", english: "Silver", category: "colors" },
 
-  // COMMON PHRASES
+  // Common Phrases
   { chinese: "请问，这个多少钱？", pinyin: "qǐng wèn, zhè ge duō shao qián?", english: "Excuse me, how much is this?", category: "phrases" },
   { chinese: "你好，早上好。", pinyin: "nǐ hǎo, zǎo shang hǎo", english: "Hello, good morning.", category: "phrases" },
   { chinese: "你好，下午好。", pinyin: "nǐ hǎo, xià wǔ hǎo", english: "Hello, good afternoon.", category: "phrases" },
@@ -123,7 +126,7 @@ const words = [
   { chinese: "对不起，我不明白。", pinyin: "duì bu qǐ, Wǒ tīng bù dǒng", english: "Sorry, I don't understand.", category: "phrases" },
   { chinese: "请再说一遍，好吗？", pinyin: "qǐng zài shuō yí biàn, hǎo ma?", english: "Could you say that again, please?", category: "phrases" },
   { chinese: "你会说英语吗？", pinyin: "nǐ huì shuō Yīng yǔ ma?", english: "Can you speak English?", category: "phrases" },
-  { chinese: "请问，洗手间在哪里？", pinyin: "qǐng wèn, Cèsuǒ zài nǎlǐ?", english: "Excuse me, where is the bathroom?", category: "phrases" },
+  { chinese: "请问，洗手间在哪里？", pinyin: "qǐng wèn, cè suǒ zài nǎ lǐ?", english: "Excuse me, where is the bathroom?", category: "phrases" },
   { chinese: "没关系。", pinyin: "méi guān xi", english: "It's okay / No problem.", category: "phrases" },
   { chinese: "我们要点菜。", pinyin: "wǒ men yào diǎn cài", english: "We want to order.", category: "phrases" },
   { chinese: "请给我们菜单。", pinyin: "qǐng gěi wǒ men cài dān", english: "Please give us a menu.", category: "phrases" },
@@ -134,7 +137,7 @@ const words = [
   { chinese: "请稍后", pinyin: "qǐng shāo hòu", english: "Please hold on / Please wait a moment", category: "phrases" },
   { chinese: "请帮帮我", pinyin: "qǐng bāng bang wǒ", english: "Please help me", category: "phrases" },
 
-  // COMMON VERBS — 25 WORDS
+  // Common Verbs
   { chinese: "给", pinyin: "gěi", english: "Give", category: "verbs" },
   { chinese: "看", pinyin: "kàn", english: "See / Look / Watch", category: "verbs" },
   { chinese: "要", pinyin: "yào", english: "Want / Need", category: "verbs" },
@@ -150,7 +153,7 @@ const words = [
   { chinese: "有", pinyin: "yǒu", english: "Have / There is", category: "verbs" },
   { chinese: "是", pinyin: "shì", english: "Be / Is / Am / Are", category: "verbs" },
   { chinese: "找", pinyin: "zhǎo", english: "Look for / Find", category: "verbs" },
-  { chinese: "知道", pinyin: "zhī dào", english: "To know a fact, piece of information, or location", category: "verbs" },
+  { chinese: "知道", pinyin: "zhī dào", english: "Know a fact or location", category: "verbs" },
   { chinese: "认识", pinyin: "rèn shi", english: "Know / Be acquainted with", category: "verbs" },
   { chinese: "喜欢", pinyin: "xǐ huan", english: "Like", category: "verbs" },
   { chinese: "爱", pinyin: "ài", english: "Love", category: "verbs" },
@@ -160,59 +163,66 @@ const words = [
   { chinese: "工作", pinyin: "gōng zuò", english: "Work", category: "verbs" },
   { chinese: "等", pinyin: "děng", english: "Wait", category: "verbs" },
   { chinese: "帮助", pinyin: "bāng zhù", english: "Help", category: "verbs" },
-  { chinese: "懂", pinyin: "dǒng", english: "To know the how and why", category: "verbs" },
+  { chinese: "懂", pinyin: "dǒng", english: "Understand how or why", category: "verbs" },
   { chinese: "写", pinyin: "xiě", english: "Write", category: "verbs" },
-{ chinese: "记得", pinyin: "jì de", english: "Remember", category: "verbs" },
-{ chinese: "忘记", pinyin: "wàng jì", english: "Forget", category: "verbs" },
-{ chinese: "解释", pinyin: "jiě shì", english: "Explain", category: "verbs" },
-{ chinese: "决定", pinyin: "jué dìng", english: "Decide", category: "verbs" },
-{ chinese: "选择", pinyin: "xuǎn zé", english: "Choose", category: "verbs" },
-{ chinese: "检查", pinyin: "jiǎn chá", english: "Check / Inspect", category: "verbs" },
-{ chinese: "比较", pinyin: "bǐ jiào", english: "Compare", category: "verbs" },
-{ chinese: "准备", pinyin: "zhǔn bèi", english: "Prepare", category: "verbs" },
-{ chinese: "开始", pinyin: "kāi shǐ", english: "Begin / Start", category: "verbs" },
-{ chinese: "结束", pinyin: "jié shù", english: "Finish / End", category: "verbs" },
-{ chinese: "发现", pinyin: "fā xiàn", english: "Discover / Notice", category: "verbs" },
-{ chinese: "解决", pinyin: "jiě jué", english: "Solve / Resolve", category: "verbs" },
-{ chinese: "联系", pinyin: "lián xì", english: "Contact", category: "verbs" },
-{ chinese: "参加", pinyin: "cān jiā", english: "Participate / Attend", category: "verbs" },
-{ chinese: "提高", pinyin: "tí gāo", english: "Improve / Raise", category: "verbs" },
-{ chinese: "降低", pinyin: "jiàng dī", english: "Lower / Reduce", category: "verbs" },
-{ chinese: "继续", pinyin: "jì xù", english: "Continue", category: "verbs" },
-{ chinese: "停止", pinyin: "tíng zhǐ", english: "Stop", category: "verbs" },
-{ chinese: "同意", pinyin: "tóng yì", english: "Agree", category: "verbs" },
-{ chinese: "拒绝", pinyin: "jù jué", english: "Refuse / Reject", category: "verbs" },
-{ chinese: "走路", pinyin: "zǒu lù", english: "Walk", category: "verbs" },
-{ chinese: "坐下", pinyin: "zuò xià", english: "Sit down", category: "verbs" },
-// Time & Locations
-{ chinese: "今天", pinyin: "jīn tiān", english: "Today", category: "timeLocation" },
-{ chinese: "明天", pinyin: "míng tiān", english: "Tomorrow", category: "timeLocation" },
-{ chinese: "昨天", pinyin: "zuó tiān", english: "Yesterday", category: "timeLocation" },
-{ chinese: "后面", pinyin: "hòu miàn", english: "At the back / Behind", category: "timeLocation" },
-{ chinese: "前面", pinyin: "qián miàn", english: "In front", category: "timeLocation" },
-{ chinese: "旁边", pinyin: "páng biān", english: "Beside / Next to", category: "timeLocation" },
-{ chinese: "附近", pinyin: "fù jìn", english: "Near / Nearby", category: "timeLocation" },
-// Days of the Week
-{ chinese: "星期一", pinyin: "xīng qī yī", english: "Monday", category: "timeLocation" },
-{ chinese: "星期二", pinyin: "xīng qī èr", english: "Tuesday", category: "timeLocation" },
-{ chinese: "星期三", pinyin: "xīng qī sān", english: "Wednesday", category: "timeLocation" },
-{ chinese: "星期四", pinyin: "xīng qī sì", english: "Thursday", category: "timeLocation" },
-{ chinese: "星期五", pinyin: "xīng qī wǔ", english: "Friday", category: "timeLocation" },
-{ chinese: "星期六", pinyin: "xīng qī liù", english: "Saturday", category: "timeLocation" },
-{ chinese: "星期日", pinyin: "xīng qī rì", english: "Sunday", category: "timeLocation" },
-// Common Words
-{ chinese: "这", pinyin: "zhè", english: "This", category: "phrases" },
-{ chinese: "那", pinyin: "nà", english: "That", category: "phrases" },
-{ chinese: "这里", pinyin: "zhè lǐ", english: "Here", category: "phrases" },
-{ chinese: "那里", pinyin: "nà lǐ", english: "There", category: "phrases" },
-{ chinese: "什么", pinyin: "shén me", english: "What", category: "phrases" },
-{ chinese: "谁", pinyin: "shéi", english: "Who", category: "phrases" },
-{ chinese: "哪里", pinyin: "nǎ lǐ", english: "Where", category: "phrases" },
-{ chinese: "什么时候", pinyin: "shén me shí hou", english: "When", category: "phrases" },
-{ chinese: "为什么", pinyin: "wèi shén me", english: "Why", category: "phrases" },
-{ chinese: "怎么", pinyin: "zěn me", english: "How", category: "phrases" },
-{ chinese: "现在", pinyin: "xiàn zài", english: "Now / Right now", category: "phrases" },
+  { chinese: "记得", pinyin: "jì de", english: "Remember", category: "verbs" },
+  { chinese: "忘记", pinyin: "wàng jì", english: "Forget", category: "verbs" },
+  { chinese: "解释", pinyin: "jiě shì", english: "Explain", category: "verbs" },
+  { chinese: "决定", pinyin: "jué dìng", english: "Decide", category: "verbs" },
+  { chinese: "选择", pinyin: "xuǎn zé", english: "Choose", category: "verbs" },
+  { chinese: "检查", pinyin: "jiǎn chá", english: "Check / Inspect", category: "verbs" },
+  { chinese: "比较", pinyin: "bǐ jiào", english: "Compare", category: "verbs" },
+  { chinese: "准备", pinyin: "zhǔn bèi", english: "Prepare", category: "verbs" },
+  { chinese: "开始", pinyin: "kāi shǐ", english: "Begin / Start", category: "verbs" },
+  { chinese: "结束", pinyin: "jié shù", english: "Finish / End", category: "verbs" },
+  { chinese: "发现", pinyin: "fā xiàn", english: "Discover / Notice", category: "verbs" },
+  { chinese: "解决", pinyin: "jiě jué", english: "Solve / Resolve", category: "verbs" },
+  { chinese: "联系", pinyin: "lián xì", english: "Contact", category: "verbs" },
+  { chinese: "参加", pinyin: "cān jiā", english: "Participate / Attend", category: "verbs" },
+  { chinese: "提高", pinyin: "tí gāo", english: "Improve / Raise", category: "verbs" },
+  { chinese: "降低", pinyin: "jiàng dī", english: "Lower / Reduce", category: "verbs" },
+  { chinese: "继续", pinyin: "jì xù", english: "Continue", category: "verbs" },
+  { chinese: "停止", pinyin: "tíng zhǐ", english: "Stop", category: "verbs" },
+  { chinese: "同意", pinyin: "tóng yì", english: "Agree", category: "verbs" },
+  { chinese: "拒绝", pinyin: "jù jué", english: "Refuse / Reject", category: "verbs" },
+  { chinese: "走路", pinyin: "zǒu lù", english: "Walk", category: "verbs" },
+  { chinese: "坐下", pinyin: "zuò xià", english: "Sit down", category: "verbs" },
+
+  // Time & Locations
+  { chinese: "今天", pinyin: "jīn tiān", english: "Today", category: "timeLocation" },
+  { chinese: "明天", pinyin: "míng tiān", english: "Tomorrow", category: "timeLocation" },
+  { chinese: "昨天", pinyin: "zuó tiān", english: "Yesterday", category: "timeLocation" },
+  { chinese: "后面", pinyin: "hòu miàn", english: "At the back / Behind", category: "timeLocation" },
+  { chinese: "前面", pinyin: "qián miàn", english: "In front", category: "timeLocation" },
+  { chinese: "旁边", pinyin: "páng biān", english: "Beside / Next to", category: "timeLocation" },
+  { chinese: "附近", pinyin: "fù jìn", english: "Near / Nearby", category: "timeLocation" },
+
+  // Days of the Week
+  { chinese: "星期一", pinyin: "xīng qī yī", english: "Monday", category: "timeLocation" },
+  { chinese: "星期二", pinyin: "xīng qī èr", english: "Tuesday", category: "timeLocation" },
+  { chinese: "星期三", pinyin: "xīng qī sān", english: "Wednesday", category: "timeLocation" },
+  { chinese: "星期四", pinyin: "xīng qī sì", english: "Thursday", category: "timeLocation" },
+  { chinese: "星期五", pinyin: "xīng qī wǔ", english: "Friday", category: "timeLocation" },
+  { chinese: "星期六", pinyin: "xīng qī liù", english: "Saturday", category: "timeLocation" },
+  { chinese: "星期日", pinyin: "xīng qī rì", english: "Sunday", category: "timeLocation" },
+
+  // Common Words
+  { chinese: "这", pinyin: "zhè", english: "This", category: "phrases" },
+  { chinese: "那", pinyin: "nà", english: "That", category: "phrases" },
+  { chinese: "这里", pinyin: "zhè lǐ", english: "Here", category: "phrases" },
+  { chinese: "那里", pinyin: "nà lǐ", english: "There", category: "phrases" },
+  { chinese: "什么", pinyin: "shén me", english: "What", category: "phrases" },
+  { chinese: "谁", pinyin: "shéi", english: "Who", category: "phrases" },
+  { chinese: "哪里", pinyin: "nǎ lǐ", english: "Where", category: "phrases" },
+  { chinese: "什么时候", pinyin: "shén me shí hou", english: "When", category: "phrases" },
+  { chinese: "为什么", pinyin: "wèi shén me", english: "Why", category: "phrases" },
+  { chinese: "怎么", pinyin: "zěn me", english: "How", category: "phrases" },
+  { chinese: "现在", pinyin: "xiàn zài", english: "Now / Right now", category: "phrases" }
 ];
+
+// ==========================================
+// GET EXISTING HTML ELEMENTS
+// ==========================================
 
 const chineseEl = document.getElementById("chinese");
 const pinyinEl = document.getElementById("pinyin");
@@ -223,42 +233,205 @@ const nextButton = document.getElementById("nextButton");
 const hintEl = document.getElementById("hint");
 const progressEl = document.getElementById("progress");
 
+// Check that the original HTML elements exist.
+if (
+  !chineseEl ||
+  !pinyinEl ||
+  !englishEl ||
+  !flashcardEl ||
+  !categorySelect ||
+  !nextButton ||
+  !hintEl ||
+  !progressEl
+) {
+  throw new Error(
+    "Some required HTML elements are missing. Check the IDs in index.html."
+  );
+}
+
+// ==========================================
+// CREATE THE NEW FEATURE ELEMENTS IF NEEDED
+// This lets the feature work with your original
+// HTML even if you haven't edited index.html.
+// ==========================================
+
+let knownButton = document.getElementById("knownButton");
+
+if (!knownButton) {
+  knownButton = document.createElement("button");
+  knownButton.id = "knownButton";
+  knownButton.type = "button";
+  knownButton.textContent = "✓ I Know This Word";
+  knownButton.style.cssText =
+    "padding:13px 20px;border:1px solid #16834a;border-radius:10px;background:#e6f6ec;color:#176b3a;font-size:15px;cursor:pointer;";
+
+  nextButton.parentElement.appendChild(knownButton);
+  nextButton.parentElement.style.gap = "12px";
+  nextButton.parentElement.style.flexWrap = "wrap";
+}
+
+let knownSection = document.getElementById("knownSection");
+
+if (!knownSection) {
+  knownSection = document.createElement("section");
+  knownSection.id = "knownSection";
+  knownSection.style.cssText =
+    "margin-top:35px;padding:20px;border:1px solid #eee;border-radius:14px;background:#fff;";
+
+  knownSection.innerHTML = `
+  <h2 style="margin:0 0 8px;font-size:22px;">Known Words</h2>
+
+  <p style="margin:0 0 16px;color:#777;">
+    Words you've marked as learned. Return any word to your study deck.
+  </p>
+
+  <button
+    id="returnAllButton"
+    type="button"
+    style="
+      padding: 11px 16px;
+      margin-bottom: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #222;
+      color: white;
+      cursor: pointer;
+    "
+  >
+    ↻ Return All Known Words
+  </button>
+
+  <p id="knownCount" style="color:#777;font-size:14px;"></p>
+  <div id="knownList"></div>
+`;
+
+  document.querySelector("main.app").appendChild(knownSection);
+}
+
+const knownListEl = document.getElementById("knownList");
+const knownCountEl = document.getElementById("knownCount");
+const returnAllButton = document.getElementById("returnAllButton");
+
+returnAllButton.addEventListener("click", () => {
+  if (knownWords.length === 0) {
+    alert("You don't have any known words to return.");
+    return;
+  }
+
+  const confirmReturn = confirm(
+    `Return all ${knownWords.length} known words to your study deck?`
+  );
+
+  if (!confirmReturn) return;
+
+  // Clear the list of known words.
+  knownWords = [];
+
+  // Save the updated progress.
+  saveKnownWords();
+
+  // Rebuild and randomize the study deck.
+  createDeck();
+});
+
+// ==========================================
+// SAVED PROGRESS
+// ==========================================
+
+const STORAGE_KEY = "mandarinFlashcardsKnownWords";
+
+let knownWords = loadKnownWords();
 let deck = [];
 let currentIndex = 0;
 let revealed = false;
+
+function loadKnownWords() {
+  try {
+    const saved = JSON.parse(
+      localStorage.getItem(STORAGE_KEY) || "[]"
+    );
+
+    return Array.isArray(saved) ? saved : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function saveKnownWords() {
+  try {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(knownWords)
+    );
+  } catch (error) {
+    console.warn("Could not save known words:", error);
+  }
+}
+
+function isKnown(word) {
+  return knownWords.includes(word.chinese);
+}
+
+// ==========================================
+// RANDOMIZE WORDS
+// ==========================================
 
 function shuffle(array) {
   const result = [...array];
 
   for (let i = result.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
+
     [result[i], result[j]] = [result[j], result[i]];
   }
 
   return result;
 }
 
+// ==========================================
+// CREATE A STUDY DECK
+// Known words are excluded.
+// ==========================================
+
 function createDeck() {
   const selectedCategory = categorySelect.value;
 
-  const filteredWords = selectedCategory === "all"
-    ? words
-    : words.filter(word => word.category === selectedCategory);
+  const filteredWords =
+    selectedCategory === "all"
+      ? words
+      : words.filter(
+          word => word.category === selectedCategory
+        );
 
-  deck = shuffle(filteredWords);
+  deck = shuffle(
+    filteredWords.filter(word => !isKnown(word))
+  );
+
   currentIndex = 0;
   revealed = false;
 
   renderCard();
+  renderKnownWords();
 }
+
+// ==========================================
+// DISPLAY THE CURRENT FLASHCARD
+// ==========================================
 
 function renderCard() {
   if (deck.length === 0) {
-    chineseEl.textContent = "没有单词";
-    pinyinEl.textContent = "méi yǒu dān cí";
-    englishEl.textContent = "No words found";
-    progressEl.textContent = "";
-    hintEl.textContent = "";
+    chineseEl.textContent = "学得很好！";
+    pinyinEl.textContent = "xué de hěn hǎo!";
+    englishEl.textContent = "No words left in this category.";
+
+    progressEl.textContent = "0 words remaining";
+
+    hintEl.textContent =
+      "You've marked all words in this selection as known, or there are no words here.";
+
+    knownButton.disabled = true;
+    nextButton.disabled = true;
+
     return;
   }
 
@@ -269,35 +442,182 @@ function renderCard() {
   englishEl.textContent = revealed ? word.english : "";
 
   hintEl.textContent = revealed
-    ? "Tap Next Word to continue."
+    ? "Tap the card or Next Word to continue."
     : "Tap the card to reveal the English translation.";
 
   progressEl.textContent =
-    `Word ${currentIndex + 1} of ${deck.length}`;
+    `Word ${currentIndex + 1} of ${deck.length} remaining`;
+
+  knownButton.disabled = false;
+  nextButton.disabled = false;
 }
 
+// ==========================================
+// DISPLAY THE KNOWN WORDS LIST
+// ==========================================
+
+function renderKnownWords() {
+  const known = words.filter(word => isKnown(word));
+
+  knownCountEl.textContent =
+    `${known.length} ${known.length === 1 ? "word" : "words"}`;
+
+  knownListEl.replaceChildren();
+
+  if (known.length === 0) {
+    const emptyMessage = document.createElement("p");
+
+    emptyMessage.textContent =
+      "You haven't marked any words as known yet.";
+
+    emptyMessage.style.color = "#888";
+
+    knownListEl.appendChild(emptyMessage);
+
+    return;
+  }
+
+  known.forEach(word => {
+    const item = document.createElement("div");
+
+    item.style.cssText =
+      "display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 0;border-bottom:1px solid #eee;flex-wrap:wrap;";
+
+    const details = document.createElement("div");
+
+    details.style.cssText =
+      "display:flex;flex-direction:column;gap:5px;";
+
+    const chinese = document.createElement("strong");
+
+    chinese.textContent = word.chinese;
+
+    chinese.style.fontSize = "22px";
+
+    const pinyin = document.createElement("span");
+
+    pinyin.textContent = word.pinyin;
+
+    pinyin.style.color = "#666";
+
+    const english = document.createElement("span");
+
+    english.textContent = word.english;
+
+    details.append(chinese, pinyin, english);
+
+    const returnButton = document.createElement("button");
+
+    returnButton.type = "button";
+    returnButton.textContent = "↶ Return to Deck";
+
+    returnButton.style.cssText =
+      "padding:9px 12px;border:1px solid #ccc;border-radius:8px;background:#fff;cursor:pointer;";
+
+    returnButton.setAttribute(
+      "aria-label",
+      `Return ${word.chinese} to the study deck`
+    );
+
+    returnButton.addEventListener("click", () => {
+      returnWordToDeck(word);
+    });
+
+    item.append(details, returnButton);
+
+    knownListEl.appendChild(item);
+  });
+}
+
+// ==========================================
+// REVEAL THE ENGLISH TRANSLATION
+// ==========================================
+
 function revealAnswer() {
-  if (deck.length === 0 || revealed) return;
+  if (deck.length === 0 || revealed) {
+    return;
+  }
 
   revealed = true;
+
   renderCard();
 }
 
+// ==========================================
+// MOVE TO THE NEXT WORD
+// ==========================================
+
 function nextWord() {
-  if (deck.length === 0) return;
+  if (deck.length === 0) {
+    return;
+  }
 
   if (currentIndex < deck.length - 1) {
     currentIndex++;
   } else {
-    // All words have been shown. Shuffle for a new round.
+    // Start another randomized round of remaining words.
     deck = shuffle(deck);
     currentIndex = 0;
   }
 
   revealed = false;
+
   renderCard();
 }
 
+// ==========================================
+// MARK THE CURRENT WORD AS KNOWN
+// Removes it from the active study deck.
+// ==========================================
+
+function markCurrentAsKnown() {
+  if (deck.length === 0) {
+    return;
+  }
+
+  const word = deck[currentIndex];
+
+  if (!isKnown(word)) {
+    knownWords.push(word.chinese);
+  }
+
+  saveKnownWords();
+
+  // Remove the current word from this deck.
+  deck.splice(currentIndex, 1);
+
+  // If the removed word was last, go back to index 0.
+  if (currentIndex >= deck.length) {
+    currentIndex = 0;
+  }
+
+  revealed = false;
+
+  renderCard();
+  renderKnownWords();
+}
+
+// ==========================================
+// RETURN A KNOWN WORD TO THE STUDY DECK
+// ==========================================
+
+function returnWordToDeck(word) {
+  knownWords = knownWords.filter(
+    chinese => chinese !== word.chinese
+  );
+
+  saveKnownWords();
+
+  // Rebuild and randomize the selected category.
+  createDeck();
+}
+
+// ==========================================
+// EVENT LISTENERS
+// ==========================================
+
+// Clicking the flashcard reveals the answer.
+// Clicking again moves to the next word.
 flashcardEl.addEventListener("click", () => {
   if (revealed) {
     nextWord();
@@ -306,16 +626,36 @@ flashcardEl.addEventListener("click", () => {
   }
 });
 
+// Keyboard accessibility for the flashcard.
 flashcardEl.addEventListener("keydown", event => {
   if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
-    revealAnswer();
+
+    if (revealed) {
+      nextWord();
+    } else {
+      revealAnswer();
+    }
   }
 });
 
+// Next Word button.
 nextButton.addEventListener("click", nextWord);
 
-categorySelect.addEventListener("change", createDeck);
+// Mark as known button.
+knownButton.addEventListener(
+  "click",
+  markCurrentAsKnown
+);
 
-// Start the app.
+// Rebuild the deck when the category changes.
+categorySelect.addEventListener(
+  "change",
+  createDeck
+);
+
+// ==========================================
+// START THE APP
+// ==========================================
+
 createDeck();
