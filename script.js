@@ -207,8 +207,8 @@ const words = [
   { chinese: "什么时候", pinyin: "shén me shí hou", english: "When", category: "phrases" },
   { chinese: "为什么", pinyin: "wèi shén me", english: "Why", category: "phrases" },
   { chinese: "怎么", pinyin: "zěn me", english: "How", category: "phrases" },
-  { chinese: "现在", pinyin: "xiàn zài", english: "Now / Right now", category: "phrases" }
-  { chinese: "票", pinyin: "piào", english: "Ticket", category: "nouns" },
+  { chinese: "现在", pinyin: "xiàn zài", english: "Now / Right now", category: "phrases" },
+  { chinese: "票", pinyin: "piào", english: "Ticket", category: "phrases" },
 ];
 
 // ==========================================
